@@ -12,13 +12,13 @@ Test to make sure Datavyu is able to load videos in all supported plugins. You m
 
 - [ ] Open new instance of Datavyu.
 - [ ] On the Controller window, click Add Data.
-- [ ] Choose video file to open.
-- [ ] On success a new video player window should open up.
-- [ ] Test adding multiple videos to the same Controller window.
-Check to make sure the tracks area of the Controller window is properly populated with each stream.
+- [ ] Choose video file to open, On success a new video player window should open up.
+- [ ] Test adding multiple videos to the same Controller window, **Check to make sure the tracks area of the Controller window is properly populated with each stream**.
+
+Note: If there is multiple Video Plugins, repeat steps from 2 to 4 with each plugin. 
 
 #### Playback functions
-Test the following playback functions using the appropriate hotkeys.
+Test the following playback functions using the appropriate hotkeys or Video Controller buttons.
 1. Play
    - [ ] Controller state moves to 1x forward playback, regardless of current speed/state.
    - [ ] Playback is smooth without visible jittering or jumping. Ensure this is the case for long durations of continuous playback (e.g., 30s, 60s).
@@ -30,19 +30,28 @@ Test the following playback functions using the appropriate hotkeys.
    - [ ] Smooth playback is expected for playback up to 2x speed.
    - [ ] Playback at speeds faster than 2x should function as required but the quality of the playback may degrade. However,frames should continually update—there should be no “hanging” on a particular frame.
    - [ ] Smooth playback consists of steady frame updates, no jitter,and no visible frame jumping.
+   
+   Note: Backward Playback with FFmpeg plugin shows stuttering from [-1/32..-4] speeds, this behavior is acceptable for a backward playback.
+
 1. Stop
    - [ ] Controller moves to 0x playback speed.
    - [ ] All videos stop playing.
    - [ ] No jump in videos before the stop* (this may be broken).
+   - [ ] Play again and confirm that the Video Controller State is correct (Go through the checklist again).
 1. Pause
    - [ ] Playback stops immediately.
    - [ ] Controller state should display previous playback speed with brackets surrounding it.
    - [ ] Pressing Pause again resumes playback at the previous speed and removes brackets from the playback speed display.
    - [ ] No visible jumps in the video when pausing/resuming.
+   - [ ] Repeat steps with different playback speeds (No need to go through every playback speed one positive and one negative shuould be enough)
 1. Jog forward/backward
-   - [ ] Jog forward advances the Controller clock forward to the next multiple of the step increment size.
-   - [ ] Jog backward moves the Controller flock backward to the previous multiple of step increment.
-   - [ ] A step increment is: ceil(1000/FPS)
+   - [ ] Open counter.mp4 video.
+   - [ ] Jog forward advances the Controller clock forward to the next multiple of the step increment size (See Note).
+   - [ ] The counter video advances by one frame.
+   - [ ] Jog backward moves the Controller clock backward to the previous multiple of step increment (See Note).
+   - [ ] The counter videos step back by one frame.
+   
+   Note: A step increment is: ceil(1000/FPS)
 1. Jump back
    - [ ] Video jumps backwards by the amount indicated in the “Jump back by” field.
    - [ ] Controller time updates to reflect the jump.
@@ -62,3 +71,6 @@ The horizontal slider on the top-right area of the Controller window scales the 
 
 #### Playhead Needle
 The vertical red line in the Controller window’s track area designates the location of the current time in the video tracks. Ensure that dragging the Needle (by right-clicking and dragging the red triangle attached to the top of the Needle) updates the clock and the video windows properly. During playback, the Needle updates and moves along the tracks area.
+
+#### Note
+If Datavyu is not installed on your machine, please follow [Installation Instructions](https://github.com/databrary/datavyu_qa/wiki#installation)
