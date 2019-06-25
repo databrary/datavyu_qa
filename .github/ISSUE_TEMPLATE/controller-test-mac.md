@@ -24,15 +24,15 @@ Test the following playback functions using the appropriate hotkeys or Video Con
    - [ ] Playback is smooth without visible jittering or jumping. Ensure this is the case for long durations of continuous playback (e.g., 30s, 60s).
    - [ ] Compare to playback in a media player (e.g., QuickTime, VLC) if comparison is needed.
 1. Shuttle forward/backward
-   - [ ] Shuttle forward moves playback speed to the next forward playback increment (See [Playback speeds table](https://github.com/databrary/datavyu_qa/wiki/Resources/_edit#playback-speeds)).
-   - [ ] Shuttle backward moves playback speed to the next backward playback increment (See [Playback speeds table](https://github.com/databrary/datavyu_qa/wiki/Resources/_edit#playback-speeds)).
+   - [ ] Shuttle forward moves playback speed to the next forward playback increment (See [Playback speeds table](https://github.com/databrary/datavyu_qa/wiki/Resources#playback-speeds)).
+   - [ ] Shuttle backward moves playback speed to the next backward playback increment (See [Playback speeds table](https://github.com/databrary/datavyu_qa/wiki/Resources#playback-speeds)).
    - [ ] Smooth playback is expected for playback up to 2x speed.
    - [ ] Playback at speeds faster than 2x should function as required but the quality of the playback may degrade. However,frames should continually update—there should be no “hanging” on a particular frame.
    - [ ] Smooth playback consists of steady frame updates, no jitter,and no visible frame jumping.
    
    **Notes:** 
     - Backward Playback with FFmpeg plugin shows stuttering from [-1/32..-4] speeds, this behavior is acceptable for a backward playback.
-    - Playback increments are powers of 2 for exponents [-5..5]. There are negative as well as positive increments. Shuttle backwards from zero moves to -1/32x speed (See [Playback speeds table](https://github.com/databrary/datavyu_qa/wiki/Resources/_edit#playback-speeds)).
+    - Playback increments are powers of 2 for exponents [-5..5]. There are negative as well as positive increments. Shuttle backwards from zero moves to -1/32x speed (See [Playback speeds table](https://github.com/databrary/datavyu_qa/wiki/Resources#playback-speeds)).
 
 
 1. Stop
@@ -47,7 +47,7 @@ Test the following playback functions using the appropriate hotkeys or Video Con
    - [ ] No visible jumps in the video when pausing/resuming.
    - [ ] Repeat steps with different playback speeds (No need to go through every playback speed one positive and one negative shuould be enough)
 1. Jog forward/backward
-   - [ ] Open counter.mp4 video (Download the resource from [here](https://github.com/databrary/datavyu_qa/wiki/Resources/_edit#videos)).
+   - [ ] Open counter.mp4 video (Download the resource from [here](https://github.com/databrary/datavyu_qa/wiki/Resources#videos)).
    - [ ] Jog forward advances the Controller clock forward to the next multiple of the step increment size (See Note).
    - [ ] The counter video advances by one frame.
    - [ ] Jog backward moves the Controller clock backward to the previous multiple of step increment (See Note).
