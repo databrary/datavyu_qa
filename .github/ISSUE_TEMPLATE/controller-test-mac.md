@@ -10,10 +10,15 @@ assignees: ''
 #### Add Data
 Test to make sure Datavyu is able to load videos in all supported plugins. You may use the FrameCounter videos to test different resolutions/formats.
 
-- [ ] Open new instance of Datavyu.
-- [ ] On the Controller window, click Add Data.
-- [ ] Choose video file to open, On success a new video player window should open up.
-- [ ] Test adding multiple videos to the same Controller window, **Check to make sure the tracks area of the Controller window is properly populated with each stream**.
+- Open new instance of Datavyu.
+- On the Controller window, click Add Data.
+   - [ ] Success: File chooser window opens up above other windows. The starting folder is the folder containing the last video added to the Controller if there are any, otherwise the user's home folder. The window contains a plugin selection drop-down menu at the bottom of the screen that defaults to FFMPEG. Video files in the current directory are selectable.
+- Choose video file to open.
+   - [ ] Success: a new video player window opens up. The player window displays the first frame of video, or the frame at the current needle position if the needle is not at the start of the track.
+- Test adding multiple videos to the same Controller window.
+   - [ ] Success: Each file added creates a new track in the Controller window and a new video player window. **Check to make sure the tracks area of the Controller window is properly populated with each stream**.
+- Test resizing video windows.
+   - [ ] Success: Video windows change size without distortion or cropping. Areas of the player window without the video frame is padded black.
 
 Note: If there is multiple Video Plugins, repeat steps from 2 to 4 with each plugin. 
 
