@@ -10,12 +10,17 @@ assignees: ''
 #### Add Data
 Test to make sure Datavyu is able to load videos in all supported plugins. You may use the FrameCounter videos to test different resolutions/formats.
 
-- [ ] Open new instance of Datavyu.
-- [ ] On the Controller window, click Add Data.
-- [ ] Choose video file to open, On success a new video player window should open up.
-- [ ] Test adding multiple videos to the same Controller window, **Check to make sure the tracks area of the Controller window is properly populated with each stream**.
+1. Open new instance of Datavyu.
+2. On the Controller window, click Add Data.
+   - [ ] __Success:__ File chooser window opens up above other windows. The starting folder is the folder containing the last video added to the Controller if there are any, otherwise the user's home folder. The window contains a plugin selection drop-down menu at the bottom of the screen that defaults to FFMPEG. Video files in the current directory are selectable.
+3. Choose video file to open.
+   - [ ] __Success:__ a new video player window opens up. The player window displays the first frame of video, or the frame at the current needle position if the needle is not at the start of the track.
+4. Test adding multiple videos (using the same plugin) to the same Controller window.
+   - [ ] __Success:__ Each file added creates a new track in the Controller window and a new video player window. **Check to make sure the tracks area of the Controller window is properly populated with each stream**.
+5. Test resizing video windows.
+   - [ ] __Success:__ Video windows change size without distortion or cropping. Areas of the player window without the video frame is padded black.
 
-Note: If there is multiple Video Plugins, repeat steps from 2 to 4 with each plugin. 
+Note: If there are multiple Video Plugins, repeat steps from 2 to 5 with each plugin. Windows has only the FFMPEG plugin.
 
 #### Playback functions
 Test the following playback functions using the appropriate hotkeys or Video Controller buttons.
@@ -29,8 +34,8 @@ Test the following playback functions using the appropriate hotkeys or Video Con
    - [ ] Smooth playback is expected for playback up to 2x speed.
    - [ ] Playback at speeds faster than 2x should function as required but the quality of the playback may degrade. However,frames should continually update—there should be no “hanging” on a particular frame.
    - [ ] Smooth playback consists of steady frame updates, no jitter,and no visible frame jumping.
-   
-   **Notes:** 
+
+   **Notes:**
     - Backward Playback with FFmpeg plugin shows stuttering from [-1/32..-4] speeds, this behavior is acceptable for a backward playback.
     - Playback increments are powers of 2 for exponents [-5..5]. There are negative as well as positive increments. Shuttle backwards from zero moves to -1/32x speed (See [Playback speeds table](https://github.com/databrary/datavyu_qa/wiki/Resources/_edit#playback-speeds)).
 
@@ -52,7 +57,7 @@ Test the following playback functions using the appropriate hotkeys or Video Con
    - [ ] The counter video advances by one frame.
    - [ ] Jog backward moves the Controller clock backward to the previous multiple of step increment (See Note).
    - [ ] The counter videos step back by one frame.
-   
+
    **Note:** A step increment is: ceil(1000/FPS)
 1. Jump back
    - [ ] Video jumps backwards by the amount indicated in the “Jump back by” field.
@@ -64,7 +69,8 @@ The right side of the Controller window is the area for the video tracks. A hori
 - [ ] View - Toggles visibility of the video window for this stream
 - [ ] Volume - Vertical slider to adjust the volume for this stream
 - [ ] Resize - Fixed value sizes to which to scale this stream’s window
-- [ ] Close - Remove the video from the Controller
+-  Close - Remove the video from the Controller
+  - [ ] __Success:__ The track is removed from the Controller and other tracks (if any) are shifted to take up its space. The player window closes and leaves no traces behind.
 - [ ] Stop the player and move the track after the playback needle: the player seeks and displays the first frame.
 - [ ] Play and wait until the needle reaches the beginning of the track.
 - [ ] Move the track before the needle: the player should seek and display the last frame.
@@ -77,13 +83,13 @@ The right side of the Controller window is the area for the video tracks. A hori
 **Note:** The blue rectangle denoting a track can be dragged (if the Lock is disabled) to change the stream’s start and end position relative to the Controller clock.
 
 #### Zoom Slider
-The horizontal slider on the top-right area of the Controller window scales the granularity of the tracks display. 
-- [ ] Zooming out all the way should show all tracks, beginning to end. 
-- [ ] Zooming in should scale the tick marks at the bottom edge of the tracks area. 
+The horizontal slider on the top-right area of the Controller window scales the granularity of the tracks display.
+- [ ] Zooming out all the way should show all tracks, beginning to end.
+- [ ] Zooming in should scale the tick marks at the bottom edge of the tracks area.
 - [ ] Playing while zoomed in should move the needle past the appropriate section.
 
 #### Playhead Needle
-The vertical red line in the Controller window’s track area designates the location of the current time in the video tracks. 
+The vertical red line in the Controller window’s track area designates the location of the current time in the video tracks.
 - [ ] Ensure that dragging the Needle (by right-clicking and dragging the red triangle attached to the top of the Needle) updates the clock and the video windows properly. During playback, the Needle updates and moves along the tracks area.
 
 #### Notes
