@@ -9,24 +9,24 @@ assignees: ''
 
 #### Columns
 
-- [ ] Move between columns
-- [ ] Move between cells
-- [ ] Insert new cell
-- [ ] Insert point cells
-- [ ] Insert continuous cells
-- [ ] Insert cells left/right
-- [ ] Delete cells
+- [ ] Move between columns (Cmd + Left/Right Arrow)
+- [ ] Move between cells (Arrow Up/Down)
+- [ ] Insert new cell (Keypad Enter)
+- [ ] Insert point cells (keypad = )
+- [ ] Insert continuous cells (keypad 0)
+- [ ] Insert cells left/right (Cmd + L/R)
+- [ ] Delete cells (Cmd + \)
 
 #### Cells
 
-- [ ] Tab between codes
+- [ ] Tab between codes (Tab)
 - [ ] Change code value
-- [ ] Set onset/offset times
-- [ ] Lock onto cell
-- [ ] Jump to cell onset/offset
+- [ ] Set onset/offset times (Keypad 7/9)
+- [ ] Lock onto cell 
+- [ ] Jump to cell onset/offset (Cmd + Keypad Plus | Cmd + Shift + keypad Plus)
 
 #### Temporal alignment
-The default view of the spreadsheet is the compactly stacked box layout. The temporal layout is a much more useful view when coding. Ensure that the nesting and alignment of cells is correct when temporal alignment is enabled.
+The default view of the spreadsheet is the compactly stacked box layout. The temporal layout (Cmd + T) is a much more useful view when coding. Ensure that the nesting and alignment of cells is correct when temporal alignment is enabled.
 
 - [ ] Cells in different columns with same onset align at the top.
 - [ ] Cells in different columns with same offset align at the bottom.
@@ -42,13 +42,13 @@ The default view of the spreadsheet is the compactly stacked box layout. The tem
 - [ ] Seeking to a time updates highlighting.
 
 #### Highlight and Focus
-- [ ] Pressing the highlight and focus hotkeys toggles Highlight and Focus mode and updates the title bar to indicate state.
+- [ ] Pressing the highlight and focus hotkeys (Cmd + Shift + F) toggles Highlight and Focus mode and updates the title bar to indicate state.
 - [ ] All highlighting functions work as normal Cell Highlighting.
 - [ ] When playing, if the Controller times enters into the range of a new cell within the currently selected column, focus moves to that cell.
 - [ ] When a new cell is focused, focus remains on the same code in the cell (i.e., same functionality as up/down arrow key).
 
 #### Quick Key Mode
-- [ ] Pressing the quick key mode hotkeys toggles quick key mode and updates the title bar to indicate state.
+- [ ] Pressing the quick key mode hotkeys (Cmd + Shift + K) toggles quick key mode and updates the title bar to indicate state.
 - [ ] Pressing any key while enabled inserts a new cell in the currently selected column and fills in the first code of the cell with the key that was pressed.
 - [ ] Pressing multiple keys in succession inserts multiple cells and fills in the first code in the appropriate order.
 - [ ] Cell insertion works while the video is playing. Onset times of inserted cells are synchronized with the Controller timestamp.
